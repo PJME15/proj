@@ -1,7 +1,3 @@
-
-<?php 
-include "con.php";
- ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -331,37 +327,6 @@ include "con.php";
                     <img src="asi.png"> <!-- Replace "logo.png" with the path to your logo image -->
                 </div>
                 <header>ADMINISTRATOR</header>
-
-                <?php
-                // Check if the form is submitted
-                if (isset($_POST['submit'])) {
-                    // Retrieve the username and password entered in the form
-                    $username = $_POST['username'];
-                    $password = $_POST['password'];
-
-                    $result = mysqli_query($con, "SELECT * FROM admin WHERE username='$username' AND password='$password'");
-                    $count = mysqli_num_rows($result);
-
-                    // Perform the necessary authentication and database operations here
-                    // Replace the following code with your own logic
-                    if ($count === 1) {
-                        echo "<script>alert('success')</script>";
-                        // Redirect to the admin dashboard or desired page
-                        // header("Location: admin_dashboard.php");
-                        // exit();
-                    } else {
-                        echo "<script>
-                            Swal.fire({
-                                icon: 'warning',
-                                title: 'Error',
-                                text: 'Invalid username or password',
-                            });
-                        </script>";
-                    }
-                }
-                ?>
-
-                <form method="POST" action="">
                     <div class="input-field">
                         <input type="text" class="input" placeholder="Username" name="username">
                         <i class='bx bx-user'></i>
@@ -373,8 +338,7 @@ include "con.php";
                     <div class="input-field">
                         <input type="submit" name="submit" class="submit" value="LOGIN">
 
-                    </div>
-                </form>
+             </div>
             </div>
         </div>
 
